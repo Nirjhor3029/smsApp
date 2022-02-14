@@ -4,6 +4,7 @@
 use App\Http\Controllers\Backend\Auth\ForgotPasswordController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SmsController;
 use Illuminate\Support\Facades\Auth;
@@ -75,3 +76,5 @@ Route::middleware(['web'])->prefix('admin')->as('admin.')->group(function () {
     // PhoneBook
     Route::get('/phonebook', [SmsController::class, 'sendSms'])->name('phonebook');
 });
+
+Route::get('send-test-email', [EmailController::class,'sendEmail']);

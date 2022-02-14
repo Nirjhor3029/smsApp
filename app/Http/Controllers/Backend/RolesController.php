@@ -156,7 +156,6 @@ class RolesController extends Controller
             abort(403, 'Sorry !! You are Unauthorized to delete any role !');
         }
 
-
         $role = Role::findById($id, 'admin');
         if (!is_null($role)) {
             $role->delete();
