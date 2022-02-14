@@ -1,9 +1,9 @@
 <?php
 $themePath = asset('theme/');
 ?>
-@extends('admin.layouts.admin')
+@extends('backend.layouts.admin')
 
-@section('main-content')
+@section('admin-content')
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->

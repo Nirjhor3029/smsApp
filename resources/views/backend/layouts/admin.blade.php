@@ -32,7 +32,9 @@ $themePath = asset('theme/');
     <!-- summernote -->
     <link rel="stylesheet" href="{{ $themePath }}/plugins/summernote/summernote-bs4.min.css">
 
-    <link rel="stylesheet" href="{{ asset('/css') }}/admin_layout.css">
+    <link rel="stylesheet" href="{{ asset('/backend/assets/css/') }}/admin_layout.css">
+
+    @yield('styles')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -48,11 +50,11 @@ $themePath = asset('theme/');
         </div>
 
         <!-- Navbar -->
-        @include('admin.layouts.partials.admin_navbar')
+        @include('backend.layouts.partials.admin_navbar')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        @include('admin.layouts.partials.admin_sidebar')
+        @include('backend.layouts.partials.admin_sidebar')
         <!-- Main Sidebar Container- End -->
 
         <!-- Content Wrapper. Contains page content -->
@@ -76,13 +78,13 @@ $themePath = asset('theme/');
             <!-- /.content-header -->
 
             <!-- Main content -->
-            @yield('main-content')
+            @yield('admin-content')
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
         {{-- Footer-start --}}
-        @include('admin.layouts.partials.admin_footer')
+        @include('backend.layouts.partials.admin_footer')
         {{-- Footer-end --}}
 
         <!-- Control Sidebar -->
@@ -129,6 +131,7 @@ $themePath = asset('theme/');
     <script src="{{ $themePath }}/dist/js/pages/dashboard.js"></script>
 
 
+    @yield('scripts')
 
 
 </body>

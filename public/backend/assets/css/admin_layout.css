@@ -1,0 +1,11 @@
+:root {
+    --primary-text-color: #fff;
+}
+
+#current_balance {
+    color: var(--primary-text-color);
+}
+
+.container-fluid {
+    width: 95% !important;
+}
