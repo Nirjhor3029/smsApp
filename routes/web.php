@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Auth\ForgotPasswordController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SmsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,12 @@ Route::as('admin.')->prefix('admin')
         // Forget Password Routes
         Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
         Route::post('/password/reset/submit', [ForgotPasswordController::class, 'reset'])->name('password.update');
+
+        // SMS
+        Route::get('/sms/send', [SmsController::class, 'sendSmsPage'])->name('sms.send.page');
+        Route::get('/sms/campaign', [SmsController::class, 'campaignPage'])->name('sms.campaign.page');
+        Route::get('/sms/sender_id', [SmsController::class, 'senderIdPage'])->name('sms.sender_id.page');
+        Route::get('/sms/templates', [SmsController::class, 'templatesPage'])->name('sms.templates.page');
     });
 
 Route::middleware(['web'])->prefix('admin')->as('admin.')->group(function () {
@@ -58,17 +65,9 @@ Route::middleware(['web'])->prefix('admin')->as('admin.')->group(function () {
     // Route::get('/', [DashboardController::class,'home'])->name('home');
     // Route::get('/roles', [DashboardController::class,'roles'])->name('roles');
 
-
-
     // Company
     Route::get('/company/company-list', [CompanyController::class, 'allCompany'])->name('company.all');
     Route::get('/company/create-company', [CompanyController::class, 'companyCreate'])->name('company.create');
-
-    // SMS
-    Route::get('/sms/send', [SmsController::class, 'sendSms'])->name('sms.send');
-    Route::get('/sms/campaign', [SmsController::class, 'campaign'])->name('sms.campaign');
-    Route::get('/sms/sender_id', [SmsController::class, 'senderId'])->name('sms.sender_id');
-    Route::get('/sms/templates', [SmsController::class, 'templates'])->name('sms.templates');
 
     // Price
     Route::get('/price', [SmsController::class, 'sendSms'])->name('price');

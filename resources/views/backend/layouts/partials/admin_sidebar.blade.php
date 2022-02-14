@@ -155,25 +155,25 @@ $usr = Auth::guard('admin')->user();
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.sms.send') }}" class="nav-link">
+                            <a href="{{ route('admin.sms.send.page') }}" class="nav-link">
                                 <i class="far fas fa-angle-right nav-icon"></i>
                                 <p>Send SMS</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.sms.campaign') }}" class="nav-link">
+                            <a href="{{ route('admin.sms.campaign.page') }}" class="nav-link">
                                 <i class="far fas fa-angle-right nav-icon"></i>
                                 <p>Campaign</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.sms.sender_id') }}" class="nav-link">
+                            <a href="{{ route('admin.sms.sender_id.page') }}" class="nav-link">
                                 <i class="far fas fa-angle-right nav-icon"></i>
                                 <p>Sender ID</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.sms.templates') }}" class="nav-link">
+                            <a href="{{ route('admin.sms.templates.page') }}" class="nav-link">
                                 <i class="far fas fa-angle-right nav-icon"></i>
                                 <p>Templates</p>
                             </a>
